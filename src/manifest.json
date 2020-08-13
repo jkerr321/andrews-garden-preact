@@ -1,0 +1,7 @@
+{
+    "name": "Andrew's Garden",
+    "short_name": "Andrew's Garden",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait"
+}

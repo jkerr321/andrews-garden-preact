@@ -1,0 +1,12 @@
+{
+    "extends": ["eslint:recommended", "plugin:preact/recommended", "prettier"],
+    "plugins": ["preact", "jsx-a11y"],
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
+    },
+    "parserOptions": {
+        "sourceType": "module"
+    }
+}
