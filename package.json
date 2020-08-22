@@ -1,48 +1,40 @@
 {
-    "private": true,
-    "name": "andrews-garden-preact",
-    "version": "0.0.0",
-    "license": "MIT",
-    "scripts": {
-        "build": "preact build",
-        "serve": "sirv build --port 8080 --cors --single",
-        "dev": "preact watch",
-        "lint": "eslint src",
-        "test": "jest"
-    },
-    "eslintConfig": {
-        "extends": "preact",
-        "ignorePatterns": [
-            "build/"
-        ]
-    },
-    "browser": {
-        "child_process": false
-    },
-    "devDependencies": {
-        "enzyme": "^3.10.0",
-        "enzyme-adapter-preact-pure": "^2.0.0",
-        "eslint": "^6.0.1",
-        "eslint-config-preact": "^1.1.0",
-        "identity-obj-proxy": "^3.0.0",
-        "jest": "^24.9.0",
-        "jest-preset-preact": "^1.0.0",
-        "preact-cli": "^3.0.0",
-        "preact-render-spy": "^1.2.1",
-        "sirv-cli": "1.0.3"
-    },
-    "dependencies": {
-        "dotenv": "^8.2.0",
-        "google-spreadsheet": "^3.0.11",
-        "preact": "^10.3.2",
-        "preact-render-to-string": "^5.1.4",
-        "preact-router": "^3.2.1"
-    },
-    "jest": {
-        "preset": "jest-preset-preact",
-        "setupFiles": [
-            "<rootDir>/tests/__mocks__/browserMocks.js",
-            "<rootDir>/tests/__mocks__/setupTests.js"
-        ]
-    }
+  "name": "andrews-garden-react",
+  "version": "1.0.0",
+  "main": "src/App.js",
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "preact": "^10.4.7",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.12.1",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-jsx-a11y": "^6.2.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.0.2",
+    "parcel-bundler": "^1.12.1",
+    "prettier": "^1.16.1"
+  },
+  "scripts": {
+    "clear-build-cache": "rm -rf .cache/ dist/",
+    "dev": "parcel src/index.html",
+    "dev:mock": "cross-env PET_MOCK=mock parcel src/index.html",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Holt <btholt+complete-intro-to-react@gmail.com>",
+  "license": "Apache-2.0",
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
 }

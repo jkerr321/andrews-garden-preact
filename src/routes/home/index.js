@@ -1,14 +1,13 @@
-import { h } from 'preact';
-import Header from '../../components/header';
-import Garden from '../../components/garden';
-
-import s from './style.css';
+import React from "react";
+import Header from "../../components/header";
+import Garden from "../../components/garden";
 
 const Home = () => (
-    <div class={s.layout}>
-        <Header />
-        <Garden />
-    </div>
+  <div className="layout">
+    <Header />
+    <Garden />
+    <div id="modal-container"></div>
+  </div>
 );
 
 export default Home;
