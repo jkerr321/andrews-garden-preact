@@ -182,7 +182,7 @@ button:hover {
 }
 
 .grass img {
-  width: 90%;
+  width: 100%;
   padding: 1.8rem;
 }
 
@@ -249,41 +249,41 @@ td {
   border: 0.05rem dotted #131313;
 }
 
-/* Info modal */
-.modal {
+/* Info box */
+.info {
   grid-area: info;
   justify-self: center;
   width: 60%;
   margin: 3.6rem 3rem;
 }
 
-.modal-content {
+.info-content {
   padding: 2.4rem;
   border: 2rem solid ghostwhite;
   text-align: center;
 }
 
-.modal-image {
+.info-image {
   max-width: 80%;
   margin-top: 1.8rem;
 }
 
-.modal-title {
+.info-title {
   font-family: "Bangers";
   margin: 2rem 1.2rem;
   font-size: 4.4rem;
 }
 
-.modal-common-name {
+.info-common-name {
   font-size: 2.8rem;
 }
 
-.modal-perennial-annual {
+.info-perennial-annual {
   font-size: 2.4rem;
   margin: 1.2rem auto;
 }
 
-.modal-link {
+.info-link {
   margin: 2rem auto 2.4rem;
 }
 
@@ -327,7 +327,7 @@ td {
       "footer";
   }
 
-  .modal {
+  .info {
     margin: 5.7rem auto;
   }
 
@@ -337,7 +337,7 @@ td {
 }
 
 /* GALLERY */
-.photo-modal {
+.photo-info {
   display: block;
   position: fixed;
   z-index: 100;
@@ -351,7 +351,7 @@ td {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-.photo-modal-content {
+.photo-info-content {
   margin: auto;
   display: block;
   width: 80%;
@@ -421,7 +421,7 @@ td {
 }
 
 @media (max-width: 520px), screen and (max-device-width: 520px) {
-  .photo-modal-content {
+  .photo-info-content {
     width: 100%;
   }
 
