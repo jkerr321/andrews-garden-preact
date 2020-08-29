@@ -3,7 +3,7 @@ import Header from "../../components/header";
 import Garden from "../../components/garden";
 import InfoBoxContainer from "../../components/info-box-container";
 import getPlantData from "../../helpers/getSheetData";
-import { GARDEN_GRID_POSITIONS } from "../../constants";
+import { GARDEN_GRID_POSITIONS, DECKING_GRID_POSITIONS } from "../../constants";
 
 class Home extends React.Component {
   constructor() {
@@ -20,15 +20,15 @@ class Home extends React.Component {
   }
 
   getSpecificPlantInfo = selectedGridPosition => {
-    return GARDEN_GRID_POSITIONS.reduce(
-      (selectedPlantInfoAcc, gridPosition) => {
-        if (gridPosition === selectedGridPosition) {
-          selectedPlantInfoAcc = this.state.allPlantData[gridPosition];
-        }
-        return selectedPlantInfoAcc;
-      },
-      ""
+    const allGridPositions = GARDEN_GRID_POSITIONS.concat(
+      DECKING_GRID_POSITIONS
     );
+    return allGridPositions.reduce((selectedPlantInfoAcc, gridPosition) => {
+      if (gridPosition === selectedGridPosition) {
+        selectedPlantInfoAcc = this.state.allPlantData[gridPosition];
+      }
+      return selectedPlantInfoAcc;
+    }, "");
   };
 
   //TODO rename to showInfoBox
