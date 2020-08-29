@@ -31,7 +31,6 @@ class Home extends React.Component {
     }, "");
   };
 
-  //TODO rename to showInfoBox
   showInfo = selectedGridPosition => {
     const existinginfo = document.getElementById("info");
     if (existinginfo) {

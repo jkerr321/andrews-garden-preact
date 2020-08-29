@@ -17,11 +17,10 @@ const Header = () => (
       className="header-centre
         button
         button--big
-        js-button-toggle-view
         border"
       type="button"
     >
-      Toggle View
+      Get Started
     </button>
   </div>
 );

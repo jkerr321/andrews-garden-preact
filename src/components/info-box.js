@@ -43,9 +43,14 @@ class InfoBox extends React.Component {
       this.props.perennialAnnual
     );
 
+    //TODO abstract?
+    const borderColour = {
+      borderColor: colour
+    };
+
     return (
       <div className="info border" id="info" key={gridPosition}>
-        <div className="info-content">
+        <div className="info-content" style={borderColour}>
           <button
             className="button button--small border"
             onClick={() => this.toggleForm()} //?? why do I have to do this inside function? Why not just this.toggleForm()?

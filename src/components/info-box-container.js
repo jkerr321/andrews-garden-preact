@@ -7,22 +7,9 @@ class InfoBoxContainer extends React.Component {
   constructor(props) {
     super(props);
     this.selectedPlantInfo = props.selectedPlantInfo;
-    console.log("==================");
-    console.log("selectedPlantInfo", this.selectedPlantInfo);
-    console.log("==================");
-
     this.state = {
       showInfoBox: !!this.selectedPlantInfo.isFilled
     };
-  }
-
-  getPerennialAnnualValue(value) {
-    //TODO change the data so I don't have to do this?
-    if (!value) {
-      return "";
-    } else {
-      return value === "P" ? "Perennial" : "Annual";
-    }
   }
 
   toggleForm = () => this.setState({ showInfoBox: !this.state.showInfoBox });

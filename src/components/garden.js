@@ -20,15 +20,12 @@ class Garden extends React.Component {
     const populateGrid = gridPositions =>
       gridPositions.map(gridPosition => {
         const currentPlantData = this.state.allPlantData[gridPosition];
-        const plantExistsInGrid = currentPlantData && currentPlantData.isFilled;
-
-        const props = { plantExistsInGrid, gridPosition, ...currentPlantData }; //TODO make this not confusing
-
         return (
           <GridPlant
             key={gridPosition}
+            gridPosition={gridPosition}
             controlInfoBox={this.controlInfoBox}
-            {...props}
+            {...currentPlantData}
           />
         );
       });

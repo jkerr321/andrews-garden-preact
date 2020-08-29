@@ -1,6 +1,6 @@
 import React from "react";
 import plantData from "../helpers/rows_JSON";
-
+import colours from "../helpers/colours";
 class InfoForm extends React.Component {
   constructor(props) {
     super(props);
@@ -44,6 +44,8 @@ class InfoForm extends React.Component {
     this.toggleForm();
   };
 
+  isChecked = value => (this.state.perennialAnnual === value ? "yes" : false);
+
   handleInputChange = event => {
     const value = event.target.value;
     const name = event.target.name;
@@ -53,28 +55,37 @@ class InfoForm extends React.Component {
     });
   };
 
+  handleColourChange = event => {
+    this.setState({ colour: event.target.value });
+  };
+
   render() {
     const {
       gridPosition,
       commonName,
       latinName,
       plantedDate,
+      perennialAnnual,
       colour,
       image,
       link,
       notes
     } = this.state;
 
+    const borderColour = {
+      borderColor: colour
+    };
+
     return (
       <div className="info border" id="info" key={gridPosition}>
-        <div className="info-content">
+        <div className="info-content" style={borderColour}>
           <form
             onSubmit={e => {
               e.preventDefault();
               this.updatePlantInfo();
             }}
           >
-            <div className="info-title"></div>
+            <div className="info-title">{gridPosition}</div>
             <div className="form-body">
               <label className="form-body__label" htmlFor="form-latin-name">
                 Latin Name
@@ -101,6 +112,7 @@ class InfoForm extends React.Component {
             </div>
             <label htmlFor="perennial">Perennial</label>
             <input
+              checked={perennialAnnual === "Perennial"}
               type="radio"
               id="perennial"
               name="perennialAnnual"
@@ -109,12 +121,30 @@ class InfoForm extends React.Component {
             ></input>
             <label htmlFor="annual">Annual</label>
             <input
+              checked={perennialAnnual === "Annual"}
               type="radio"
               id="annual"
               name="perennialAnnual"
               value="Annual"
               onChange={this.handleInputChange}
             ></input>
+            <div className="form-body">
+              <label className="form-body__label" htmlFor="colour">
+                Colour{" "}
+              </label>
+              <select
+                id="colour"
+                name="colour"
+                className="form-body__input"
+                onChange={() => this.setState({ colour: event.target.value })}
+              >
+                {colours.map(colour => (
+                  <option key={gridPosition + colour} value={colour}>
+                    {colour}
+                  </option>
+                ))}
+              </select>
+            </div>
             <div className="form-body">
               <label className="form-body__label" htmlFor="form-planted-date">
                 Planted Date
@@ -189,7 +219,3 @@ class InfoForm extends React.Component {
 }
 
 export default InfoForm;
-
-// TODO
-// colours select box
-// radio button placeholders

@@ -87,7 +87,7 @@ button:hover {
 .button--small {
   /* font-family: 'PT Mono', monospace; */
   height: 3.2rem;
-  margin: 0.4rem auto;
+  margin: 0.6rem 1rem;
 }
 
 .button:hover {
