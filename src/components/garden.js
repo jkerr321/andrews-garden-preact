@@ -1,4 +1,5 @@
 import React from "react";
+import backgroundImage from "../assets/background.png";
 import {
   GARDEN_GRID_POSITIONS,
   DECKING_GRID_POSITIONS,
@@ -7,56 +8,29 @@ import {
   ROW_NAMES_GARDEN
 } from "../constants";
 import GridPlant from "./grid-plant";
-import getSheetData from "../helpers/getSheetData";
 
 class Garden extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  getPlantData = async () => {
-    try {
-      const rows = await getSheetData();
-      const values = rows.reduce((acc, row) => {
-        if (row.position) {
-          acc[row.position] = {
-            position: row.position,
-            commonName: row.commonname,
-            latinName: row.latinname,
-            perennialAnnual: `${row.perennialannual}`.substr(0, 1),
-            plantedDate: row.planteddate,
-            floweringPeriod: row.floweringperiod,
-            colour: row.colour,
-            image: row.image,
-            link: row.link,
-            isFilled: !!row.filled,
-            notes: row.notes
-          };
-        }
-        return acc;
-      }, {});
-
-      return values;
-    } catch (err) {
-      console.error("getPlantData error", err);
-    }
-  };
-
-  async componentDidMount() {
-    const plantData = await this.getPlantData();
-    this.setState(plantData);
+  constructor(props) {
+    super(props);
+    this.controlInfoBox = this.props.controlInfoBox;
+    this.state = { allPlantData: this.props.allPlantData };
   }
 
   render() {
     const populateGrid = gridPositions =>
       gridPositions.map(gridPosition => {
-        const currentPlantData = this.state[gridPosition];
+        const currentPlantData = this.state.allPlantData[gridPosition];
         const plantExistsInGrid = currentPlantData && currentPlantData.isFilled;
 
-        const props = { plantExistsInGrid, gridPosition, ...currentPlantData };
+        const props = { plantExistsInGrid, gridPosition, ...currentPlantData }; //TODO make this not confusing
 
-        return <GridPlant key={gridPosition} {...props} />;
+        return (
+          <GridPlant
+            key={gridPosition}
+            controlInfoBox={this.controlInfoBox}
+            {...props}
+          />
+        );
       });
 
     const populateGridAxis = borderPositions =>
@@ -82,7 +56,7 @@ class Garden extends React.Component {
           {gridItemsGarden}
           <div className="grass border">
             <img
-              src="./assets/background.png"
+              src={backgroundImage}
               alt="Andrew's Garden Logo over grass section of the garden"
             ></img>
           </div>

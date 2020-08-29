@@ -294,6 +294,9 @@ td {
 }
 
 .form-body__input {
+  /* ?? why have had to tyle this like this? On original version it looks like this automatically */
+  border: 1px solid #131313;
+  border-radius: 1px;
   text-align: left;
   margin-left: 0.8rem;
 }

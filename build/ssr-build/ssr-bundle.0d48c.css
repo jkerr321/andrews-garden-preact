@@ -1,473 +1,474 @@
 * {
-    box-sizing: border-box;
-    background-color: white;
+  box-sizing: border-box;
+  background-color: white;
 }
 
 #app {
-    height: 100%;
+  height: 100%;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: 'PT Mono', monospace;
-    font-size: 1.6rem;
+  font-family: "PT Mono", monospace;
+  font-size: 1.6rem;
 }
 
 a {
-    color: #131313;
+  color: #131313;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .border {
-    border: 0.15rem dotted #131313;
+  border: 0.15rem dotted #131313;
 }
 
 /* Grids */
 .layout {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, -webkit-min-content);
-    grid-template-rows: repeat(3, min-content);
-    grid-template-areas:
-        'header header'
-        'garden info'
-        'footer footer';
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, -webkit-min-content);
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    "header header"
+    "garden info"
+    "footer footer";
 }
 
 /* Header */
 .header {
-    grid-area: header;
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, -webkit-min-content);
-    grid-template-rows: repeat(2, min-content);
-    grid-template-areas:
-        'header-left header-right'
-        'header-centre header-centre';
+  grid-area: header;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, -webkit-min-content);
+  grid-template-rows: repeat(2, min-content);
+  grid-template-areas:
+    "header-left header-right"
+    "header-centre header-centre";
 }
 
 .header-centre {
-    grid-area: header-centre;
+  grid-area: header-centre;
 }
 
 .header-right {
-    grid-area: header-right;
-    text-align: right;
-    margin: 0.8rem 1.2rem 0;
+  grid-area: header-right;
+  text-align: right;
+  margin: 0.8rem 1.2rem 0;
 }
 
 .header-right a {
-    margin-left: 0.8rem;
+  margin-left: 0.8rem;
 }
 
 .header-left {
-    grid-area: header-left;
-    text-align: left;
-    margin: 0.8rem 0 0 1.2rem;
+  grid-area: header-left;
+  text-align: left;
+  margin: 0.8rem 0 0 1.2rem;
 }
 
 .button {
-    color: #131313;
-    font-size: 2.4rem;
-    font-family: 'Bangers';
+  color: #131313;
+  font-size: 2.4rem;
+  font-family: "Bangers";
 }
 
 .button--big {
-    height: 4.5rem;
-    width: 16.8rem;
-    margin: 2rem auto 5.2rem;
+  height: 4.5rem;
+  width: 16.8rem;
+  margin: 2rem auto 5.2rem;
 }
 
 .button--small {
-    /* font-family: 'PT Mono', monospace; */
-    height: 3.2rem;
-    margin: 0.4rem auto;
+  /* font-family: 'PT Mono', monospace; */
+  height: 3.2rem;
+  margin: 0.4rem auto;
 }
 
 .button:hover {
-    color: white;
-    background-color: #131313;
+  color: white;
+  background-color: #131313;
 }
 
 /* Garden */
 .garden {
-    grid-area: garden;
-    justify-self: center;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(3, -webkit-min-content);
-    grid-template-rows: repeat(3, min-content);
-    grid-template-areas:
-        '. col-name'
-        'row-name-borders borders-grid'
-        'row-name-decking decking-grid';
+  grid-area: garden;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, -webkit-min-content);
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    ". col-name"
+    "row-name-borders borders-grid"
+    "row-name-decking decking-grid";
 }
 
 .borders-grid {
-    grid-area: borders-grid;
-    display: grid;
-    grid-template-columns: repeat(16, 3.5rem);
-    grid-template-rows: repeat(16, 3.5rem);
-    grid-template-areas:
-        'A1 B1 C1 D1 E1 F1 G1 H1 J1 K1 L1 M1 N1 P1 Q1 R1'
-        'A2 B2 C2 D2 E2 F2 G2 H2 J2 K2 L2 M2 N2 P2 Q2 R2'
-        'A3 B3 C3 D3 E3 F3 G3 H3 J3 K3 L3 M3 N3 P3 Q3 R3'
-        'A4 B4 C4 grass grass grass grass grass grass grass grass grass grass P4 Q4 R4'
-        'A5 B5 C5 grass grass grass grass grass grass grass grass grass grass P5 Q5 R5'
-        'A6 B6 C6 grass grass grass grass grass grass grass grass grass grass P6 Q6 R6'
-        'A7 B7 C7 grass grass grass grass grass grass grass grass grass grass P7 Q7 R7'
-        'A8 B8 C8 grass grass grass grass grass grass grass grass grass grass P8 Q8 R8'
-        'A9 B9 C9 grass grass grass grass grass grass grass grass grass grass P9 Q9 R9'
-        'A10 B10 C10 grass grass grass grass grass grass grass grass grass grass P10 Q10 R10'
-        'A11 B11 C11 grass grass grass grass grass grass grass grass grass grass P11 Q11 R11'
-        'A12 B12 C12 grass grass grass grass grass grass grass grass grass grass P12 Q12 R12'
-        'A13 B13 C13 grass grass grass grass grass grass grass grass grass grass P13 Q13 R13'
-        'A14 B14 C14 grass grass grass grass grass grass grass grass grass grass P14 Q14 R14'
-        'A15 B15 C15 grass grass grass grass grass grass grass grass grass grass P15 Q15 R15'
-        'A16 B16 C16 grass grass grass grass grass grass grass grass grass grass P16 Q16 R16';
+  grid-area: borders-grid;
+  display: grid;
+  grid-template-columns: repeat(16, 3.5rem);
+  grid-template-rows: repeat(16, 3.5rem);
+  grid-template-areas:
+    "A1 B1 C1 D1 E1 F1 G1 H1 J1 K1 L1 M1 N1 P1 Q1 R1"
+    "A2 B2 C2 D2 E2 F2 G2 H2 J2 K2 L2 M2 N2 P2 Q2 R2"
+    "A3 B3 C3 D3 E3 F3 G3 H3 J3 K3 L3 M3 N3 P3 Q3 R3"
+    "A4 B4 C4 grass grass grass grass grass grass grass grass grass grass P4 Q4 R4"
+    "A5 B5 C5 grass grass grass grass grass grass grass grass grass grass P5 Q5 R5"
+    "A6 B6 C6 grass grass grass grass grass grass grass grass grass grass P6 Q6 R6"
+    "A7 B7 C7 grass grass grass grass grass grass grass grass grass grass P7 Q7 R7"
+    "A8 B8 C8 grass grass grass grass grass grass grass grass grass grass P8 Q8 R8"
+    "A9 B9 C9 grass grass grass grass grass grass grass grass grass grass P9 Q9 R9"
+    "A10 B10 C10 grass grass grass grass grass grass grass grass grass grass P10 Q10 R10"
+    "A11 B11 C11 grass grass grass grass grass grass grass grass grass grass P11 Q11 R11"
+    "A12 B12 C12 grass grass grass grass grass grass grass grass grass grass P12 Q12 R12"
+    "A13 B13 C13 grass grass grass grass grass grass grass grass grass grass P13 Q13 R13"
+    "A14 B14 C14 grass grass grass grass grass grass grass grass grass grass P14 Q14 R14"
+    "A15 B15 C15 grass grass grass grass grass grass grass grass grass grass P15 Q15 R15"
+    "A16 B16 C16 grass grass grass grass grass grass grass grass grass grass P16 Q16 R16";
 }
 
 .decking-grid {
-    margin-top: 0.8rem;
-    grid-area: decking-grid;
-    display: grid;
-    grid-template-columns: repeat(16, 3.5rem);
-    grid-template-rows: repeat(3, 3.5rem);
-    grid-template-areas:
-        'A17 B17 C17 D17 E17 F17 G17 H17 J17 K17 L17 M17 N17 P17 Q17 R17'
-        'A18 B18 C18 D18 E18 F18 G18 H18 J18 K18 L18 M18 N18 P18 Q18 R18'
-        'A19 B19 C19 D19 E19 F19 G19 H19 J19 K19 L19 M19 N19 P19 Q19 R19';
+  margin-top: 0.8rem;
+  grid-area: decking-grid;
+  display: grid;
+  grid-template-columns: repeat(16, 3.5rem);
+  grid-template-rows: repeat(3, 3.5rem);
+  grid-template-areas:
+    "A17 B17 C17 D17 E17 F17 G17 H17 J17 K17 L17 M17 N17 P17 Q17 R17"
+    "A18 B18 C18 D18 E18 F18 G18 H18 J18 K18 L18 M18 N18 P18 Q18 R18"
+    "A19 B19 C19 D19 E19 F19 G19 H19 J19 K19 L19 M19 N19 P19 Q19 R19";
 }
 
 .col-name {
-    background-color: ghostwhite;
-    grid-area: col-name;
-    display: grid;
-    grid-template-columns: repeat(16, 3.5rem);
-    grid-template-rows: 3.5rem;
+  background-color: ghostwhite;
+  grid-area: col-name;
+  display: grid;
+  grid-template-columns: repeat(16, 3.5rem);
+  grid-template-rows: 3.5rem;
 }
 
 .row-name-borders {
-    background-color: ghostwhite;
-    grid-area: row-name-borders;
-    display: grid;
-    grid-template-rows: repeat(16, 3.5rem);
-    grid-template-columns: 3.5rem;
+  background-color: ghostwhite;
+  grid-area: row-name-borders;
+  display: grid;
+  grid-template-rows: repeat(16, 3.5rem);
+  grid-template-columns: 3.5rem;
 }
 
 .row-name-decking {
-    background-color: ghostwhite;
-    margin-top: 0.8rem;
-    grid-area: row-name-decking;
-    display: grid;
-    grid-template-rows: repeat(3, 3.5rem);
-    grid-template-columns: 3.5rem;
+  background-color: ghostwhite;
+  margin-top: 0.8rem;
+  grid-area: row-name-decking;
+  display: grid;
+  grid-template-rows: repeat(3, 3.5rem);
+  grid-template-columns: 3.5rem;
 }
 
 .name-item {
-    text-align: center;
-    padding: 1rem;
+  text-align: center;
+  padding: 1rem;
 }
 
 /* elements */
 .grass {
-    position: relative;
-    border-bottom: none;
-    grid-area: grass;
+  position: relative;
+  border-bottom: none;
+  grid-area: grass;
 }
 
 .grass img {
-    width: 90%;
-    padding: 1.8rem;
+  width: 90%;
+  padding: 1.8rem;
 }
 
 .grid-plant {
-    border-radius: 100%;
+  border-radius: 100%;
 }
 .grid-plant:focus {
-    outline: none;
-    box-shadow: 0 0 1rem;
+  outline: none;
+  box-shadow: 0 0 1rem;
 }
 
 .A {
-    border: 0.2rem dotted #131313;
+  border: 0.2rem dotted #131313;
 }
 
 .P {
-    border: 0.1rem solid #131313;
+  border: 0.1rem solid #131313;
 }
 
 .snips {
-    top: 5%;
-    left: 42%;
-    height: 6rem;
-    width: 6rem;
-    position: absolute;
-    opacity: 0;
+  top: 5%;
+  left: 42%;
+  height: 6rem;
+  width: 6rem;
+  position: absolute;
+  opacity: 0;
 }
 
 /* Footer */
 .footer {
-    grid-area: footer;
-    text-align: center;
+  grid-area: footer;
+  text-align: center;
 }
 
 .footer-content {
-    margin-top: 5.6rem;
+  margin-top: 5.6rem;
 }
 
 .footer-content a {
-    margin: 0 1rem;
+  margin: 0 1rem;
 }
 
 /* Data table */
 table {
-    margin: 0 4rem 2rem 0;
-    font-size: 1.4rem;
-    grid-area: info;
-    border-collapse: collapse;
+  margin: 0 4rem 2rem 0;
+  font-size: 1.4rem;
+  grid-area: info;
+  border-collapse: collapse;
 }
 
 td,
 th {
-    padding: 0.5rem;
-    text-align: left;
+  padding: 0.5rem;
+  text-align: left;
 }
 
 th {
-    background-color: ghostwhite;
-    border-bottom: 0.2rem dotted #131313;
+  background-color: ghostwhite;
+  border-bottom: 0.2rem dotted #131313;
 }
 
 td {
-    border: 0.05rem dotted #131313;
+  border: 0.05rem dotted #131313;
 }
 
-/* Info modal */
-.modal {
-    grid-area: info;
-    justify-self: center;
-    width: 60%;
-    margin: 3.6rem 3rem;
+/* Info info */
+.info {
+  grid-area: info;
+  justify-self: center;
+  width: 60%;
+  margin: 3.6rem 3rem;
 }
 
-.modal-content {
-    padding: 2.4rem;
-    border: 2rem solid ghostwhite;
-    text-align: center;
+.info-content {
+  padding: 2.4rem;
+  border: 2rem solid ghostwhite;
+  text-align: center;
 }
 
-.modal-image img {
-    max-width: 80%;
-    margin-top: 1.8rem;
+.info-image img {
+  max-width: 80%;
+  margin-top: 1.8rem;
 }
 
-.modal-title {
-    font-family: 'Bangers';
-    margin: 2rem 1.2rem;
-    font-size: 4.4rem;
+.info-title {
+  font-family: "Bangers";
+  margin: 2rem 1.2rem;
+  font-size: 4.4rem;
 }
 
-.modal-common-name {
-    font-size: 2.8rem;
+.info-common-name {
+  font-size: 2.8rem;
 }
 
-.modal-perennial-annual {
-    font-size: 2.4rem;
-    margin: 1.2rem auto;
+.info-perennial-annual {
+  font-size: 2.4rem;
+  margin: 1.2rem auto;
 }
 
-.modal-link {
-    margin: 2rem auto 2.4rem;
+.info-link {
+  margin: 2rem auto 2.4rem;
 }
 
 .form-body__label {
-    vertical-align: top;
-    text-align: right;
-    margin-right: 0.8rem;
+  vertical-align: top;
+  text-align: right;
+  margin-right: 0.8rem;
 }
 
 .form-body__input {
-    text-align: left;
-    margin-left: 0.8rem;
+  text-align: left;
+  margin-left: 0.8rem;
 }
 
 .form-body {
-    margin: 1.4rem 1.2rem;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-row-gap: 1.4rem;
-    text-align: left;
+  margin: 1.4rem 1.2rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row-gap: 1.4rem;
+  text-align: left;
 }
 
 /* Little bit of responsiveness */
 @media (max-width: 520px), screen and (max-device-width: 520px) {
-    html {
-        font-size: 100%;
-    }
+  html {
+    font-size: 100%;
+  }
 
-    body {
-        font-size: 2.4rem;
-    }
+  body {
+    font-size: 2.4rem;
+  }
 
-    .layout {
-        display: grid;
-        grid-template-rows: repeat(4, -webkit-min-content);
-        grid-template-rows: repeat(4, min-content);
-        grid-template-columns: none;
-        grid-template-areas:
-            'header'
-            'garden'
-            'info'
-            'footer';
-    }
+  .layout {
+    display: grid;
+    grid-template-rows: repeat(4, -webkit-min-content);
+    grid-template-rows: repeat(4, min-content);
+    grid-template-columns: none;
+    grid-template-areas:
+      "header"
+      "garden"
+      "info"
+      "footer";
+  }
 
-    .modal {
-        margin: 5.7rem auto;
-    }
+  .info {
+    margin: 5.7rem auto;
+  }
 
-    table {
-        margin: 5.7rem auto;
-    }
+  table {
+    margin: 5.7rem auto;
+  }
 }
 
 /* GALLERY */
-.photo-modal {
-    display: block;
-    position: fixed;
-    z-index: 100;
-    padding-top: 10rem;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
+.photo-info {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  padding-top: 10rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-.photo-modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 80rem;
+.photo-info-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 80rem;
 }
 
 .close {
-    position: absolute;
-    top: 1.5rem;
-    right: 0.35rem;
-    color: #f1f1f1;
-    font-size: 4rem;
-    font-weight: bold;
-    transition: 0.3s;
+  position: absolute;
+  top: 1.5rem;
+  right: 0.35rem;
+  color: #f1f1f1;
+  font-size: 4rem;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .close:hover,
 .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .expandable-image:hover {
-    opacity: 0.7;
-    cursor: pointer;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .photo {
-    display: block;
-    max-width: 100%;
-    max-height: 48rem;
-    background-color: ghostwhite;
+  display: block;
+  max-width: 100%;
+  max-height: 48rem;
+  background-color: ghostwhite;
 }
 
 .double__p1 {
-    margin-right: 0.2rem;
+  margin-right: 0.2rem;
 }
 
 .double__p2 {
-    margin-left: 0.2rem;
+  margin-left: 0.2rem;
 }
 
 .solo,
 .double {
-    display: -ms-flexbox;
-    display: flex;
-    margin: 0.2rem auto;
-    max-width: 65rem;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.2rem auto;
+  max-width: 65rem;
 }
 
 .season-container {
-    margin: auto;
-    width: 50%;
+  margin: auto;
+  width: 50%;
 }
 
 .season-content {
-    padding: 6%;
+  padding: 6%;
 }
 
 .season-title {
-    width: 50%;
-    margin: 1.2rem auto 0.4rem;
-    font-family: 'Bangers';
-    font-size: 4rem;
-    text-align: left;
-    color: #131313;
+  width: 50%;
+  margin: 1.2rem auto 0.4rem;
+  font-family: "Bangers";
+  font-size: 4rem;
+  text-align: left;
+  color: #131313;
 }
 
 @media (max-width: 520px), screen and (max-device-width: 520px) {
-    .photo-modal-content {
-        width: 100%;
-    }
+  .photo-info-content {
+    width: 100%;
+  }
 
-    .season-title,
-    .season-container {
-        width: 98%;
-    }
+  .season-title,
+  .season-container {
+    width: 98%;
+  }
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .colour-display {
-    text-align: center;
+  text-align: center;
 }
 
-html, body {
-	height: 100%;
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	background: #FAFAFA;
-	font-family: 'Helvetica Neue', arial, sans-serif;
-	font-weight: 400;
-	color: #444;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #fafafa;
+  font-family: "Helvetica Neue", arial, sans-serif;
+  font-weight: 400;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #app__14IfW {
-	height: 100%;
+  height: 100%;
 }
 html {
   font-size: 62.5%;
 }
 
 body {
-  font-family: 'PT Mono', monospace;
+  font-family: "PT Mono", monospace;
   font-size: 1.6rem;
 }
 
@@ -480,7 +481,7 @@ button:hover {
 }
 
 .border__1xcxT {
-   border: 0.15rem dotted #131313;
+  border: 0.15rem dotted #131313;
 }
 
 /* Grids */
@@ -490,7 +491,7 @@ button:hover {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, -webkit-min-content);
   grid-template-rows: repeat(3, min-content);
-  grid-template-areas: 
+  grid-template-areas:
     "header header"
     "garden info"
     "footer footer";
@@ -505,8 +506,8 @@ button:hover {
   grid-template-rows: repeat(2, -webkit-min-content);
   grid-template-rows: repeat(2, min-content);
   grid-template-areas:
-  "header-left header-right"
-  "header-centre header-centre"
+    "header-left header-right"
+    "header-centre header-centre";
 }
 
 .header-centre__2PQ_I {
@@ -532,7 +533,7 @@ button:hover {
 .button__-RpIq {
   color: #131313;
   font-size: 2.4rem;
-  font-family: 'Bangers';
+  font-family: "Bangers";
 }
 
 .button--big__3vYeF {
@@ -560,7 +561,7 @@ button:hover {
   grid-template-columns: auto;
   grid-template-rows: repeat(3, -webkit-min-content);
   grid-template-rows: repeat(3, min-content);
-  grid-template-areas: 
+  grid-template-areas:
     ". col-name"
     "row-name-borders borders-grid"
     "row-name-decking decking-grid";
@@ -596,7 +597,7 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(16, 3.5rem);
   grid-template-rows: repeat(3, 3.5rem);
-  grid-template-areas: 
+  grid-template-areas:
     "A17 B17 C17 D17 E17 F17 G17 H17 J17 K17 L17 M17 N17 P17 Q17 R17"
     "A18 B18 C18 D18 E18 F18 G18 H18 J18 K18 L18 M18 N18 P18 Q18 R18"
     "A19 B19 C19 D19 E19 F19 G19 H19 J19 K19 L19 M19 N19 P19 Q19 R19";
@@ -640,8 +641,8 @@ button:hover {
 }
 
 .grass__14XdT img {
-    width: 90%;
-    padding: 1.8rem;
+  width: 90%;
+  padding: 1.8rem;
 }
 
 .grid-plant__2-lSL {
@@ -691,7 +692,8 @@ table {
   border-collapse: collapse;
 }
 
-td, th {
+td,
+th {
   padding: 0.5rem;
   text-align: left;
 }
@@ -705,41 +707,41 @@ td {
   border: 0.05rem dotted #131313;
 }
 
-/* Info modal */
-.modal__5S51r {
+/* Info info */
+.info__5S51r {
   grid-area: info;
   justify-self: center;
   width: 60%;
   margin: 3.6rem 3rem;
 }
 
-.modal-content__2KBc5 {
+.info-content__2KBc5 {
   padding: 2.4rem;
   border: 2rem solid ghostwhite;
   text-align: center;
 }
 
-.modal-image__2FhLO img {
+.info-image__2FhLO img {
   max-width: 80%;
   margin-top: 1.8rem;
 }
 
-.modal-title__1lrvm {
-  font-family: 'Bangers';
+.info-title__1lrvm {
+  font-family: "Bangers";
   margin: 2rem 1.2rem;
   font-size: 4.4rem;
 }
 
-.modal-common-name__1iSse {
+.info-common-name__1iSse {
   font-size: 2.8rem;
 }
 
-.modal-perennial-annual__u0GOA {
+.info-perennial-annual__u0GOA {
   font-size: 2.4rem;
   margin: 1.2rem auto;
 }
 
-.modal-link__3D3sn {
+.info-link__3D3sn {
   margin: 2rem auto 2.4rem;
 }
 
@@ -777,14 +779,14 @@ td {
     grid-template-rows: repeat(4, -webkit-min-content);
     grid-template-rows: repeat(4, min-content);
     grid-template-columns: none;
-    grid-template-areas: 
+    grid-template-areas:
       "header"
       "garden"
       "info"
       "footer";
   }
 
-  .modal__5S51r {
+  .info__5S51r {
     margin: 5.7rem auto;
   }
 
@@ -794,7 +796,7 @@ td {
 }
 
 /* GALLERY */
-.photo-modal__3QHWG {
+.photo-info__3QHWG {
   display: block;
   position: fixed;
   z-index: 100;
@@ -808,7 +810,7 @@ td {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-.photo-modal-content__2WO77 {
+.photo-info-content__2WO77 {
   margin: auto;
   display: block;
   width: 80%;
@@ -872,18 +874,19 @@ td {
 .season-title__lWDah {
   width: 50%;
   margin: 1.2rem auto 0.4rem;
-  font-family: 'Bangers';
+  font-family: "Bangers";
   font-size: 4rem;
   text-align: left;
   color: #131313;
 }
 
 @media (max-width: 520px), screen and (max-device-width: 520px) {
-  .photo-modal-content__2WO77{
+  .photo-info-content__2WO77 {
     width: 100%;
   }
 
-  .season-title__lWDah, .season-container__IiRFB {
+  .season-title__lWDah,
+  .season-container__IiRFB {
     width: 98%;
   }
 }
@@ -897,905 +900,905 @@ td {
 }
 
 * {
-    box-sizing: border-box;
-    background-color: white;
+  box-sizing: border-box;
+  background-color: white;
 }
 
 #app__2nv4v {
-    height: 100%;
+  height: 100%;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: 'PT Mono', monospace;
-    font-size: 1.6rem;
+  font-family: "PT Mono", monospace;
+  font-size: 1.6rem;
 }
 
 a {
-    color: #131313;
+  color: #131313;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .border__3cnxF {
-    border: 0.15rem dotted #131313;
+  border: 0.15rem dotted #131313;
 }
 
 /* Grids */
 .layout__2yYrf {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, -webkit-min-content);
-    grid-template-rows: repeat(3, min-content);
-    grid-template-areas:
-        'header header'
-        'garden info'
-        'footer footer';
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, -webkit-min-content);
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    "header header"
+    "garden info"
+    "footer footer";
 }
 
 /* Header */
 .header__2rqfu {
-    grid-area: header;
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, -webkit-min-content);
-    grid-template-rows: repeat(2, min-content);
-    grid-template-areas:
-        'header-left header-right'
-        'header-centre header-centre';
+  grid-area: header;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, -webkit-min-content);
+  grid-template-rows: repeat(2, min-content);
+  grid-template-areas:
+    "header-left header-right"
+    "header-centre header-centre";
 }
 
 .header-centre__1Xct1 {
-    grid-area: header-centre;
+  grid-area: header-centre;
 }
 
 .header-right__1Ttau {
-    grid-area: header-right;
-    text-align: right;
-    margin: 0.8rem 1.2rem 0;
+  grid-area: header-right;
+  text-align: right;
+  margin: 0.8rem 1.2rem 0;
 }
 
 .header-right__1Ttau a {
-    margin-left: 0.8rem;
+  margin-left: 0.8rem;
 }
 
 .header-left__2pIBn {
-    grid-area: header-left;
-    text-align: left;
-    margin: 0.8rem 0 0 1.2rem;
+  grid-area: header-left;
+  text-align: left;
+  margin: 0.8rem 0 0 1.2rem;
 }
 
 .button__1bexT {
-    color: #131313;
-    font-size: 2.4rem;
-    font-family: 'Bangers';
+  color: #131313;
+  font-size: 2.4rem;
+  font-family: "Bangers";
 }
 
 .button--big__3RgAi {
-    height: 4.5rem;
-    width: 16.8rem;
-    margin: 2rem auto 5.2rem;
+  height: 4.5rem;
+  width: 16.8rem;
+  margin: 2rem auto 5.2rem;
 }
 
 .button--small__1pcyR {
-    /* font-family: 'PT Mono', monospace; */
-    height: 3.2rem;
-    margin: 0.4rem auto;
+  /* font-family: 'PT Mono', monospace; */
+  height: 3.2rem;
+  margin: 0.4rem auto;
 }
 
 .button__1bexT:hover {
-    color: white;
-    background-color: #131313;
+  color: white;
+  background-color: #131313;
 }
 
 /* Garden */
 .garden__1Zz-W {
-    grid-area: garden;
-    justify-self: center;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(3, -webkit-min-content);
-    grid-template-rows: repeat(3, min-content);
-    grid-template-areas:
-        '. col-name'
-        'row-name-borders borders-grid'
-        'row-name-decking decking-grid';
+  grid-area: garden;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, -webkit-min-content);
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    ". col-name"
+    "row-name-borders borders-grid"
+    "row-name-decking decking-grid";
 }
 
 .borders-grid__3vTWV {
-    grid-area: borders-grid;
-    display: grid;
-    grid-template-columns: repeat(16, 3.5rem);
-    grid-template-rows: repeat(16, 3.5rem);
-    grid-template-areas:
-        'A1 B1 C1 D1 E1 F1 G1 H1 J1 K1 L1 M1 N1 P1 Q1 R1'
-        'A2 B2 C2 D2 E2 F2 G2 H2 J2 K2 L2 M2 N2 P2 Q2 R2'
-        'A3 B3 C3 D3 E3 F3 G3 H3 J3 K3 L3 M3 N3 P3 Q3 R3'
-        'A4 B4 C4 grass grass grass grass grass grass grass grass grass grass P4 Q4 R4'
-        'A5 B5 C5 grass grass grass grass grass grass grass grass grass grass P5 Q5 R5'
-        'A6 B6 C6 grass grass grass grass grass grass grass grass grass grass P6 Q6 R6'
-        'A7 B7 C7 grass grass grass grass grass grass grass grass grass grass P7 Q7 R7'
-        'A8 B8 C8 grass grass grass grass grass grass grass grass grass grass P8 Q8 R8'
-        'A9 B9 C9 grass grass grass grass grass grass grass grass grass grass P9 Q9 R9'
-        'A10 B10 C10 grass grass grass grass grass grass grass grass grass grass P10 Q10 R10'
-        'A11 B11 C11 grass grass grass grass grass grass grass grass grass grass P11 Q11 R11'
-        'A12 B12 C12 grass grass grass grass grass grass grass grass grass grass P12 Q12 R12'
-        'A13 B13 C13 grass grass grass grass grass grass grass grass grass grass P13 Q13 R13'
-        'A14 B14 C14 grass grass grass grass grass grass grass grass grass grass P14 Q14 R14'
-        'A15 B15 C15 grass grass grass grass grass grass grass grass grass grass P15 Q15 R15'
-        'A16 B16 C16 grass grass grass grass grass grass grass grass grass grass P16 Q16 R16';
+  grid-area: borders-grid;
+  display: grid;
+  grid-template-columns: repeat(16, 3.5rem);
+  grid-template-rows: repeat(16, 3.5rem);
+  grid-template-areas:
+    "A1 B1 C1 D1 E1 F1 G1 H1 J1 K1 L1 M1 N1 P1 Q1 R1"
+    "A2 B2 C2 D2 E2 F2 G2 H2 J2 K2 L2 M2 N2 P2 Q2 R2"
+    "A3 B3 C3 D3 E3 F3 G3 H3 J3 K3 L3 M3 N3 P3 Q3 R3"
+    "A4 B4 C4 grass grass grass grass grass grass grass grass grass grass P4 Q4 R4"
+    "A5 B5 C5 grass grass grass grass grass grass grass grass grass grass P5 Q5 R5"
+    "A6 B6 C6 grass grass grass grass grass grass grass grass grass grass P6 Q6 R6"
+    "A7 B7 C7 grass grass grass grass grass grass grass grass grass grass P7 Q7 R7"
+    "A8 B8 C8 grass grass grass grass grass grass grass grass grass grass P8 Q8 R8"
+    "A9 B9 C9 grass grass grass grass grass grass grass grass grass grass P9 Q9 R9"
+    "A10 B10 C10 grass grass grass grass grass grass grass grass grass grass P10 Q10 R10"
+    "A11 B11 C11 grass grass grass grass grass grass grass grass grass grass P11 Q11 R11"
+    "A12 B12 C12 grass grass grass grass grass grass grass grass grass grass P12 Q12 R12"
+    "A13 B13 C13 grass grass grass grass grass grass grass grass grass grass P13 Q13 R13"
+    "A14 B14 C14 grass grass grass grass grass grass grass grass grass grass P14 Q14 R14"
+    "A15 B15 C15 grass grass grass grass grass grass grass grass grass grass P15 Q15 R15"
+    "A16 B16 C16 grass grass grass grass grass grass grass grass grass grass P16 Q16 R16";
 }
 
 .decking-grid__3JMYl {
-    margin-top: 0.8rem;
-    grid-area: decking-grid;
-    display: grid;
-    grid-template-columns: repeat(16, 3.5rem);
-    grid-template-rows: repeat(3, 3.5rem);
-    grid-template-areas:
-        'A17 B17 C17 D17 E17 F17 G17 H17 J17 K17 L17 M17 N17 P17 Q17 R17'
-        'A18 B18 C18 D18 E18 F18 G18 H18 J18 K18 L18 M18 N18 P18 Q18 R18'
-        'A19 B19 C19 D19 E19 F19 G19 H19 J19 K19 L19 M19 N19 P19 Q19 R19';
+  margin-top: 0.8rem;
+  grid-area: decking-grid;
+  display: grid;
+  grid-template-columns: repeat(16, 3.5rem);
+  grid-template-rows: repeat(3, 3.5rem);
+  grid-template-areas:
+    "A17 B17 C17 D17 E17 F17 G17 H17 J17 K17 L17 M17 N17 P17 Q17 R17"
+    "A18 B18 C18 D18 E18 F18 G18 H18 J18 K18 L18 M18 N18 P18 Q18 R18"
+    "A19 B19 C19 D19 E19 F19 G19 H19 J19 K19 L19 M19 N19 P19 Q19 R19";
 }
 
 .col-name__PYa6e {
-    background-color: ghostwhite;
-    grid-area: col-name;
-    display: grid;
-    grid-template-columns: repeat(16, 3.5rem);
-    grid-template-rows: 3.5rem;
+  background-color: ghostwhite;
+  grid-area: col-name;
+  display: grid;
+  grid-template-columns: repeat(16, 3.5rem);
+  grid-template-rows: 3.5rem;
 }
 
 .row-name-borders__17ASl {
-    background-color: ghostwhite;
-    grid-area: row-name-borders;
-    display: grid;
-    grid-template-rows: repeat(16, 3.5rem);
-    grid-template-columns: 3.5rem;
+  background-color: ghostwhite;
+  grid-area: row-name-borders;
+  display: grid;
+  grid-template-rows: repeat(16, 3.5rem);
+  grid-template-columns: 3.5rem;
 }
 
 .row-name-decking__357QY {
-    background-color: ghostwhite;
-    margin-top: 0.8rem;
-    grid-area: row-name-decking;
-    display: grid;
-    grid-template-rows: repeat(3, 3.5rem);
-    grid-template-columns: 3.5rem;
+  background-color: ghostwhite;
+  margin-top: 0.8rem;
+  grid-area: row-name-decking;
+  display: grid;
+  grid-template-rows: repeat(3, 3.5rem);
+  grid-template-columns: 3.5rem;
 }
 
 .name-item__3j2v8 {
-    text-align: center;
-    padding: 1rem;
+  text-align: center;
+  padding: 1rem;
 }
 
 /* elements */
 .grass__1YVDQ {
-    position: relative;
-    border-bottom: none;
-    grid-area: grass;
+  position: relative;
+  border-bottom: none;
+  grid-area: grass;
 }
 
 .grass__1YVDQ img {
-    width: 90%;
-    padding: 1.8rem;
+  width: 90%;
+  padding: 1.8rem;
 }
 
 .grid-plant__1JlZ_ {
-    border-radius: 100%;
+  border-radius: 100%;
 }
 .grid-plant__1JlZ_:focus {
-    outline: none;
-    box-shadow: 0 0 1rem;
+  outline: none;
+  box-shadow: 0 0 1rem;
 }
 
 .A__1AB0T {
-    border: 0.2rem dotted #131313;
+  border: 0.2rem dotted #131313;
 }
 
 .P__2KJN7 {
-    border: 0.1rem solid #131313;
+  border: 0.1rem solid #131313;
 }
 
 .snips__2Cnyh {
-    top: 5%;
-    left: 42%;
-    height: 6rem;
-    width: 6rem;
-    position: absolute;
-    opacity: 0;
+  top: 5%;
+  left: 42%;
+  height: 6rem;
+  width: 6rem;
+  position: absolute;
+  opacity: 0;
 }
 
 /* Footer */
 .footer__3jYYK {
-    grid-area: footer;
-    text-align: center;
+  grid-area: footer;
+  text-align: center;
 }
 
 .footer-content__VKuE- {
-    margin-top: 5.6rem;
+  margin-top: 5.6rem;
 }
 
 .footer-content__VKuE- a {
-    margin: 0 1rem;
+  margin: 0 1rem;
 }
 
 /* Data table */
 table {
-    margin: 0 4rem 2rem 0;
-    font-size: 1.4rem;
-    grid-area: info;
-    border-collapse: collapse;
+  margin: 0 4rem 2rem 0;
+  font-size: 1.4rem;
+  grid-area: info;
+  border-collapse: collapse;
 }
 
 td,
 th {
-    padding: 0.5rem;
-    text-align: left;
+  padding: 0.5rem;
+  text-align: left;
 }
 
 th {
-    background-color: ghostwhite;
-    border-bottom: 0.2rem dotted #131313;
+  background-color: ghostwhite;
+  border-bottom: 0.2rem dotted #131313;
 }
 
 td {
-    border: 0.05rem dotted #131313;
+  border: 0.05rem dotted #131313;
 }
 
-/* Info modal */
-.modal__22Sm9 {
-    grid-area: info;
-    justify-self: center;
-    width: 60%;
-    margin: 3.6rem 3rem;
+/* Info info */
+.info__22Sm9 {
+  grid-area: info;
+  justify-self: center;
+  width: 60%;
+  margin: 3.6rem 3rem;
 }
 
-.modal-content__akelP {
-    padding: 2.4rem;
-    border: 2rem solid ghostwhite;
-    text-align: center;
+.info-content__akelP {
+  padding: 2.4rem;
+  border: 2rem solid ghostwhite;
+  text-align: center;
 }
 
-.modal-image__3Lz7X img {
-    max-width: 80%;
-    margin-top: 1.8rem;
+.info-image__3Lz7X img {
+  max-width: 80%;
+  margin-top: 1.8rem;
 }
 
-.modal-title__dd6Zp {
-    font-family: 'Bangers';
-    margin: 2rem 1.2rem;
-    font-size: 4.4rem;
+.info-title__dd6Zp {
+  font-family: "Bangers";
+  margin: 2rem 1.2rem;
+  font-size: 4.4rem;
 }
 
-.modal-common-name__376nh {
-    font-size: 2.8rem;
+.info-common-name__376nh {
+  font-size: 2.8rem;
 }
 
-.modal-perennial-annual__mzcFn {
-    font-size: 2.4rem;
-    margin: 1.2rem auto;
+.info-perennial-annual__mzcFn {
+  font-size: 2.4rem;
+  margin: 1.2rem auto;
 }
 
-.modal-link__9VpEZ {
-    margin: 2rem auto 2.4rem;
+.info-link__9VpEZ {
+  margin: 2rem auto 2.4rem;
 }
 
 .form-body__label__3pjPW {
-    vertical-align: top;
-    text-align: right;
-    margin-right: 0.8rem;
+  vertical-align: top;
+  text-align: right;
+  margin-right: 0.8rem;
 }
 
 .form-body__input__3cmnp {
-    text-align: left;
-    margin-left: 0.8rem;
+  text-align: left;
+  margin-left: 0.8rem;
 }
 
 .form-body__1-ai_ {
-    margin: 1.4rem 1.2rem;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-row-gap: 1.4rem;
-    text-align: left;
+  margin: 1.4rem 1.2rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row-gap: 1.4rem;
+  text-align: left;
 }
 
 /* Little bit of responsiveness */
 @media (max-width: 520px), screen and (max-device-width: 520px) {
-    html {
-        font-size: 100%;
-    }
+  html {
+    font-size: 100%;
+  }
 
-    body {
-        font-size: 2.4rem;
-    }
+  body {
+    font-size: 2.4rem;
+  }
 
-    .layout__2yYrf {
-        display: grid;
-        grid-template-rows: repeat(4, -webkit-min-content);
-        grid-template-rows: repeat(4, min-content);
-        grid-template-columns: none;
-        grid-template-areas:
-            'header'
-            'garden'
-            'info'
-            'footer';
-    }
+  .layout__2yYrf {
+    display: grid;
+    grid-template-rows: repeat(4, -webkit-min-content);
+    grid-template-rows: repeat(4, min-content);
+    grid-template-columns: none;
+    grid-template-areas:
+      "header"
+      "garden"
+      "info"
+      "footer";
+  }
 
-    .modal__22Sm9 {
-        margin: 5.7rem auto;
-    }
+  .info__22Sm9 {
+    margin: 5.7rem auto;
+  }
 
-    table {
-        margin: 5.7rem auto;
-    }
+  table {
+    margin: 5.7rem auto;
+  }
 }
 
 /* GALLERY */
-.photo-modal__p6Xb_ {
-    display: block;
-    position: fixed;
-    z-index: 100;
-    padding-top: 10rem;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
+.photo-info__p6Xb_ {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  padding-top: 10rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-.photo-modal-content__19M-0 {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 80rem;
+.photo-info-content__19M-0 {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 80rem;
 }
 
 .close__3bMJa {
-    position: absolute;
-    top: 1.5rem;
-    right: 0.35rem;
-    color: #f1f1f1;
-    font-size: 4rem;
-    font-weight: bold;
-    transition: 0.3s;
+  position: absolute;
+  top: 1.5rem;
+  right: 0.35rem;
+  color: #f1f1f1;
+  font-size: 4rem;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .close__3bMJa:hover,
 .close__3bMJa:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .expandable-image__1ioko:hover {
-    opacity: 0.7;
-    cursor: pointer;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .photo__2E05N {
-    display: block;
-    max-width: 100%;
-    max-height: 48rem;
-    background-color: ghostwhite;
+  display: block;
+  max-width: 100%;
+  max-height: 48rem;
+  background-color: ghostwhite;
 }
 
 .double__p1__1jkCJ {
-    margin-right: 0.2rem;
+  margin-right: 0.2rem;
 }
 
 .double__p2__1RctR {
-    margin-left: 0.2rem;
+  margin-left: 0.2rem;
 }
 
 .solo__iEI0t,
 .double__3J0dk {
-    display: -ms-flexbox;
-    display: flex;
-    margin: 0.2rem auto;
-    max-width: 65rem;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.2rem auto;
+  max-width: 65rem;
 }
 
 .season-container__2hB-8 {
-    margin: auto;
-    width: 50%;
+  margin: auto;
+  width: 50%;
 }
 
 .season-content__25oS9 {
-    padding: 6%;
+  padding: 6%;
 }
 
 .season-title__XtPqo {
-    width: 50%;
-    margin: 1.2rem auto 0.4rem;
-    font-family: 'Bangers';
-    font-size: 4rem;
-    text-align: left;
-    color: #131313;
+  width: 50%;
+  margin: 1.2rem auto 0.4rem;
+  font-family: "Bangers";
+  font-size: 4rem;
+  text-align: left;
+  color: #131313;
 }
 
 @media (max-width: 520px), screen and (max-device-width: 520px) {
-    .photo-modal-content__19M-0 {
-        width: 100%;
-    }
+  .photo-info-content__19M-0 {
+    width: 100%;
+  }
 
-    .season-title__XtPqo,
-    .season-container__2hB-8 {
-        width: 98%;
-    }
+  .season-title__XtPqo,
+  .season-container__2hB-8 {
+    width: 98%;
+  }
 }
 
 .hidden__3Wgyn {
-    display: none;
+  display: none;
 }
 
 .colour-display__3ZYKS {
-    text-align: center;
+  text-align: center;
 }
 
 html,
 body {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    background: #fafafa;
-    font-family: 'Helvetica Neue', arial, sans-serif;
-    font-weight: 400;
-    color: #444;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #fafafa;
+  font-family: "Helvetica Neue", arial, sans-serif;
+  font-weight: 400;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #app__23vCb {
-    height: 100%;
+  height: 100%;
 }
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: 'PT Mono', monospace;
-    font-size: 1.6rem;
+  font-family: "PT Mono", monospace;
+  font-size: 1.6rem;
 }
 
 a {
-    color: #131313;
+  color: #131313;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .border__ojvbl {
-    border: 0.15rem dotted #131313;
+  border: 0.15rem dotted #131313;
 }
 
 /* Grids */
 
 .layout__1qSdc {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, -webkit-min-content);
-    grid-template-rows: repeat(3, min-content);
-    grid-template-areas:
-        'header header'
-        'garden info'
-        'footer footer';
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, -webkit-min-content);
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    "header header"
+    "garden info"
+    "footer footer";
 }
 
 /* Header */
 .header__YYSDi {
-    grid-area: header;
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, -webkit-min-content);
-    grid-template-rows: repeat(2, min-content);
-    grid-template-areas:
-        'header-left header-right'
-        'header-centre header-centre';
+  grid-area: header;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, -webkit-min-content);
+  grid-template-rows: repeat(2, min-content);
+  grid-template-areas:
+    "header-left header-right"
+    "header-centre header-centre";
 }
 
 .header-centre__w70g_ {
-    grid-area: header-centre;
+  grid-area: header-centre;
 }
 
 .header-right__1L0Sk {
-    grid-area: header-right;
-    text-align: right;
-    margin: 0.8rem 1.2rem 0;
+  grid-area: header-right;
+  text-align: right;
+  margin: 0.8rem 1.2rem 0;
 }
 
 .header-right__1L0Sk a {
-    margin-left: 0.8rem;
+  margin-left: 0.8rem;
 }
 
 .header-left__3Mzv_ {
-    grid-area: header-left;
-    text-align: left;
-    margin: 0.8rem 0 0 1.2rem;
+  grid-area: header-left;
+  text-align: left;
+  margin: 0.8rem 0 0 1.2rem;
 }
 
 .button__2ZqaY {
-    color: #131313;
-    font-size: 2.4rem;
-    font-family: 'Bangers';
+  color: #131313;
+  font-size: 2.4rem;
+  font-family: "Bangers";
 }
 
 .button--big__5oW-Z {
-    height: 4.5rem;
-    width: 16.8rem;
-    margin: 2rem auto 5.2rem;
+  height: 4.5rem;
+  width: 16.8rem;
+  margin: 2rem auto 5.2rem;
 }
 
 .button--small__30mOv {
-    /* font-family: 'PT Mono', monospace; */
-    height: 3.2rem;
-    margin: 0.4rem auto;
+  /* font-family: 'PT Mono', monospace; */
+  height: 3.2rem;
+  margin: 0.4rem auto;
 }
 
 .button__2ZqaY:hover {
-    color: white;
-    background-color: #131313;
+  color: white;
+  background-color: #131313;
 }
 
 /* Garden */
 .garden__mdPqh {
-    grid-area: garden;
-    justify-self: center;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(3, -webkit-min-content);
-    grid-template-rows: repeat(3, min-content);
-    grid-template-areas:
-        '. col-name'
-        'row-name-borders borders-grid'
-        'row-name-decking decking-grid';
+  grid-area: garden;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, -webkit-min-content);
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    ". col-name"
+    "row-name-borders borders-grid"
+    "row-name-decking decking-grid";
 }
 
 .borders-grid__QBLkS {
-    grid-area: borders-grid;
-    display: grid;
-    grid-template-columns: repeat(16, 3.5rem);
-    grid-template-rows: repeat(16, 3.5rem);
-    grid-template-areas:
-        'A1 B1 C1 D1 E1 F1 G1 H1 J1 K1 L1 M1 N1 P1 Q1 R1'
-        'A2 B2 C2 D2 E2 F2 G2 H2 J2 K2 L2 M2 N2 P2 Q2 R2'
-        'A3 B3 C3 D3 E3 F3 G3 H3 J3 K3 L3 M3 N3 P3 Q3 R3'
-        'A4 B4 C4 grass grass grass grass grass grass grass grass grass grass P4 Q4 R4'
-        'A5 B5 C5 grass grass grass grass grass grass grass grass grass grass P5 Q5 R5'
-        'A6 B6 C6 grass grass grass grass grass grass grass grass grass grass P6 Q6 R6'
-        'A7 B7 C7 grass grass grass grass grass grass grass grass grass grass P7 Q7 R7'
-        'A8 B8 C8 grass grass grass grass grass grass grass grass grass grass P8 Q8 R8'
-        'A9 B9 C9 grass grass grass grass grass grass grass grass grass grass P9 Q9 R9'
-        'A10 B10 C10 grass grass grass grass grass grass grass grass grass grass P10 Q10 R10'
-        'A11 B11 C11 grass grass grass grass grass grass grass grass grass grass P11 Q11 R11'
-        'A12 B12 C12 grass grass grass grass grass grass grass grass grass grass P12 Q12 R12'
-        'A13 B13 C13 grass grass grass grass grass grass grass grass grass grass P13 Q13 R13'
-        'A14 B14 C14 grass grass grass grass grass grass grass grass grass grass P14 Q14 R14'
-        'A15 B15 C15 grass grass grass grass grass grass grass grass grass grass P15 Q15 R15'
-        'A16 B16 C16 grass grass grass grass grass grass grass grass grass grass P16 Q16 R16';
+  grid-area: borders-grid;
+  display: grid;
+  grid-template-columns: repeat(16, 3.5rem);
+  grid-template-rows: repeat(16, 3.5rem);
+  grid-template-areas:
+    "A1 B1 C1 D1 E1 F1 G1 H1 J1 K1 L1 M1 N1 P1 Q1 R1"
+    "A2 B2 C2 D2 E2 F2 G2 H2 J2 K2 L2 M2 N2 P2 Q2 R2"
+    "A3 B3 C3 D3 E3 F3 G3 H3 J3 K3 L3 M3 N3 P3 Q3 R3"
+    "A4 B4 C4 grass grass grass grass grass grass grass grass grass grass P4 Q4 R4"
+    "A5 B5 C5 grass grass grass grass grass grass grass grass grass grass P5 Q5 R5"
+    "A6 B6 C6 grass grass grass grass grass grass grass grass grass grass P6 Q6 R6"
+    "A7 B7 C7 grass grass grass grass grass grass grass grass grass grass P7 Q7 R7"
+    "A8 B8 C8 grass grass grass grass grass grass grass grass grass grass P8 Q8 R8"
+    "A9 B9 C9 grass grass grass grass grass grass grass grass grass grass P9 Q9 R9"
+    "A10 B10 C10 grass grass grass grass grass grass grass grass grass grass P10 Q10 R10"
+    "A11 B11 C11 grass grass grass grass grass grass grass grass grass grass P11 Q11 R11"
+    "A12 B12 C12 grass grass grass grass grass grass grass grass grass grass P12 Q12 R12"
+    "A13 B13 C13 grass grass grass grass grass grass grass grass grass grass P13 Q13 R13"
+    "A14 B14 C14 grass grass grass grass grass grass grass grass grass grass P14 Q14 R14"
+    "A15 B15 C15 grass grass grass grass grass grass grass grass grass grass P15 Q15 R15"
+    "A16 B16 C16 grass grass grass grass grass grass grass grass grass grass P16 Q16 R16";
 }
 
 .decking-grid__3W7tk {
-    margin-top: 0.8rem;
-    grid-area: decking-grid;
-    display: grid;
-    grid-template-columns: repeat(16, 3.5rem);
-    grid-template-rows: repeat(3, 3.5rem);
-    grid-template-areas:
-        'A17 B17 C17 D17 E17 F17 G17 H17 J17 K17 L17 M17 N17 P17 Q17 R17'
-        'A18 B18 C18 D18 E18 F18 G18 H18 J18 K18 L18 M18 N18 P18 Q18 R18'
-        'A19 B19 C19 D19 E19 F19 G19 H19 J19 K19 L19 M19 N19 P19 Q19 R19';
+  margin-top: 0.8rem;
+  grid-area: decking-grid;
+  display: grid;
+  grid-template-columns: repeat(16, 3.5rem);
+  grid-template-rows: repeat(3, 3.5rem);
+  grid-template-areas:
+    "A17 B17 C17 D17 E17 F17 G17 H17 J17 K17 L17 M17 N17 P17 Q17 R17"
+    "A18 B18 C18 D18 E18 F18 G18 H18 J18 K18 L18 M18 N18 P18 Q18 R18"
+    "A19 B19 C19 D19 E19 F19 G19 H19 J19 K19 L19 M19 N19 P19 Q19 R19";
 }
 
 .col-name__3VLml {
-    background-color: ghostwhite;
-    grid-area: col-name;
-    display: grid;
-    grid-template-columns: repeat(16, 3.5rem);
-    grid-template-rows: 3.5rem;
+  background-color: ghostwhite;
+  grid-area: col-name;
+  display: grid;
+  grid-template-columns: repeat(16, 3.5rem);
+  grid-template-rows: 3.5rem;
 }
 
 .row-name-borders__2HqKV {
-    background-color: ghostwhite;
-    grid-area: row-name-borders;
-    display: grid;
-    grid-template-rows: repeat(16, 3.5rem);
-    grid-template-columns: 3.5rem;
+  background-color: ghostwhite;
+  grid-area: row-name-borders;
+  display: grid;
+  grid-template-rows: repeat(16, 3.5rem);
+  grid-template-columns: 3.5rem;
 }
 
 .row-name-decking__14XX7 {
-    background-color: ghostwhite;
-    margin-top: 0.8rem;
-    grid-area: row-name-decking;
-    display: grid;
-    grid-template-rows: repeat(3, 3.5rem);
-    grid-template-columns: 3.5rem;
+  background-color: ghostwhite;
+  margin-top: 0.8rem;
+  grid-area: row-name-decking;
+  display: grid;
+  grid-template-rows: repeat(3, 3.5rem);
+  grid-template-columns: 3.5rem;
 }
 
 .name-item__23qDl {
-    text-align: center;
-    padding: 1rem;
+  text-align: center;
+  padding: 1rem;
 }
 
 /* elements */
 .grass__1uA-b {
-    position: relative;
-    border-bottom: none;
-    grid-area: grass;
+  position: relative;
+  border-bottom: none;
+  grid-area: grass;
 }
 
 .grass__1uA-b img {
-    width: 99%;
-    padding: 1.8rem;
-    margin: 0.1rem;
+  width: 99%;
+  padding: 1.8rem;
+  margin: 0.1rem;
 }
 
 .grid-plant__1t27b {
-    border-radius: 100%;
+  border-radius: 100%;
 }
 .grid-plant__1t27b:focus {
-    outline: none;
-    box-shadow: 0 0 1rem;
+  outline: none;
+  box-shadow: 0 0 1rem;
 }
 
 .A__20kDG {
-    border: 0.2rem dotted #131313;
+  border: 0.2rem dotted #131313;
 }
 
 .P__fwpQV {
-    border: 0.1rem solid #131313;
+  border: 0.1rem solid #131313;
 }
 
 .snips__1iSBn {
-    top: 5%;
-    left: 42%;
-    height: 6rem;
-    width: 6rem;
-    position: absolute;
-    opacity: 0;
+  top: 5%;
+  left: 42%;
+  height: 6rem;
+  width: 6rem;
+  position: absolute;
+  opacity: 0;
 }
 
 /* Footer */
 .footer__3yI0S {
-    grid-area: footer;
-    text-align: center;
+  grid-area: footer;
+  text-align: center;
 }
 
 .footer-content__3Dpw4 {
-    margin-top: 5.6rem;
+  margin-top: 5.6rem;
 }
 
 .footer-content__3Dpw4 a {
-    margin: 0 1rem;
+  margin: 0 1rem;
 }
 
 /* Data table */
 table {
-    margin: 0 4rem 2rem 0;
-    font-size: 1.4rem;
-    grid-area: info;
-    border-collapse: collapse;
+  margin: 0 4rem 2rem 0;
+  font-size: 1.4rem;
+  grid-area: info;
+  border-collapse: collapse;
 }
 
 td,
 th {
-    padding: 0.5rem;
-    text-align: left;
+  padding: 0.5rem;
+  text-align: left;
 }
 
 th {
-    background-color: ghostwhite;
-    border-bottom: 0.2rem dotted #131313;
+  background-color: ghostwhite;
+  border-bottom: 0.2rem dotted #131313;
 }
 
 td {
-    border: 0.05rem dotted #131313;
+  border: 0.05rem dotted #131313;
 }
 
-/* Info modal */
-.modal__Be_9x {
-    grid-area: info;
-    justify-self: center;
-    width: 60%;
-    margin: 3.6rem 3rem;
+/* Info info */
+.info__Be_9x {
+  grid-area: info;
+  justify-self: center;
+  width: 60%;
+  margin: 3.6rem 3rem;
 }
 
-.modal-content__3Zwb8 {
-    padding: 2.4rem;
-    border: 2rem solid ghostwhite;
-    text-align: center;
+.info-content__3Zwb8 {
+  padding: 2.4rem;
+  border: 2rem solid ghostwhite;
+  text-align: center;
 }
 
-.modal-image__1jBvZ img {
-    max-width: 80%;
-    margin-top: 1.8rem;
+.info-image__1jBvZ img {
+  max-width: 80%;
+  margin-top: 1.8rem;
 }
 
-.modal-title__1Sknk {
-    font-family: 'Bangers';
-    margin: 2rem 1.2rem;
-    font-size: 4.4rem;
+.info-title__1Sknk {
+  font-family: "Bangers";
+  margin: 2rem 1.2rem;
+  font-size: 4.4rem;
 }
 
-.modal-common-name__dDs00 {
-    font-size: 2.8rem;
+.info-common-name__dDs00 {
+  font-size: 2.8rem;
 }
 
-.modal-perennial-annual__37ldO {
-    font-size: 2.4rem;
-    margin: 1.2rem auto;
+.info-perennial-annual__37ldO {
+  font-size: 2.4rem;
+  margin: 1.2rem auto;
 }
 
-.modal-link__2krUx {
-    margin: 2rem auto 2.4rem;
+.info-link__2krUx {
+  margin: 2rem auto 2.4rem;
 }
 
 .form-body__label__3M8VH {
-    vertical-align: top;
-    text-align: right;
-    margin-right: 0.8rem;
+  vertical-align: top;
+  text-align: right;
+  margin-right: 0.8rem;
 }
 
 .form-body__input__2m3rz {
-    text-align: left;
-    margin-left: 0.8rem;
+  text-align: left;
+  margin-left: 0.8rem;
 }
 
 .form-body__SvwUV {
-    margin: 1.4rem 1.2rem;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-row-gap: 1.4rem;
-    text-align: left;
+  margin: 1.4rem 1.2rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row-gap: 1.4rem;
+  text-align: left;
 }
 
 /* Little bit of responsiveness */
 @media (max-width: 520px), screen and (max-device-width: 520px) {
-    html {
-        font-size: 100%;
-    }
+  html {
+    font-size: 100%;
+  }
 
-    body {
-        font-size: 2.4rem;
-    }
+  body {
+    font-size: 2.4rem;
+  }
 
-    .layout__1qSdc {
-        display: grid;
-        grid-template-rows: repeat(4, -webkit-min-content);
-        grid-template-rows: repeat(4, min-content);
-        grid-template-columns: none;
-        grid-template-areas:
-            'header'
-            'garden'
-            'info'
-            'footer';
-    }
+  .layout__1qSdc {
+    display: grid;
+    grid-template-rows: repeat(4, -webkit-min-content);
+    grid-template-rows: repeat(4, min-content);
+    grid-template-columns: none;
+    grid-template-areas:
+      "header"
+      "garden"
+      "info"
+      "footer";
+  }
 
-    .modal__Be_9x {
-        margin: 5.7rem auto;
-    }
+  .info__Be_9x {
+    margin: 5.7rem auto;
+  }
 
-    table {
-        margin: 5.7rem auto;
-    }
+  table {
+    margin: 5.7rem auto;
+  }
 }
 
 /* GALLERY */
-.photo-modal__dG3J2 {
-    display: block;
-    position: fixed;
-    z-index: 100;
-    padding-top: 10rem;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
+.photo-info__dG3J2 {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  padding-top: 10rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-.photo-modal-content__2G4jm {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 80rem;
+.photo-info-content__2G4jm {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 80rem;
 }
 
 .close__2StDS {
-    position: absolute;
-    top: 1.5rem;
-    right: 0.35rem;
-    color: #f1f1f1;
-    font-size: 4rem;
-    font-weight: bold;
-    transition: 0.3s;
+  position: absolute;
+  top: 1.5rem;
+  right: 0.35rem;
+  color: #f1f1f1;
+  font-size: 4rem;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .close__2StDS:hover,
 .close__2StDS:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .expandable-image__IuANf:hover {
-    opacity: 0.7;
-    cursor: pointer;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .photo__3th3w {
-    display: block;
-    max-width: 100%;
-    max-height: 48rem;
-    background-color: ghostwhite;
+  display: block;
+  max-width: 100%;
+  max-height: 48rem;
+  background-color: ghostwhite;
 }
 
 .double__p1__vAipx {
-    margin-right: 0.2rem;
+  margin-right: 0.2rem;
 }
 
 .double__p2__ks6GS {
-    margin-left: 0.2rem;
+  margin-left: 0.2rem;
 }
 
 .solo__2gKr9,
 .double__WAVC0 {
-    display: -ms-flexbox;
-    display: flex;
-    margin: 0.2rem auto;
-    max-width: 65rem;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.2rem auto;
+  max-width: 65rem;
 }
 
 .season-container__3Cs7Z {
-    margin: auto;
-    width: 50%;
+  margin: auto;
+  width: 50%;
 }
 
 .season-content__1jqJF {
-    padding: 6%;
+  padding: 6%;
 }
 
 .season-title__3UNQM {
-    width: 50%;
-    margin: 1.2rem auto 0.4rem;
-    font-family: 'Bangers';
-    font-size: 4rem;
-    text-align: left;
-    color: #131313;
+  width: 50%;
+  margin: 1.2rem auto 0.4rem;
+  font-family: "Bangers";
+  font-size: 4rem;
+  text-align: left;
+  color: #131313;
 }
 
 @media (max-width: 520px), screen and (max-device-width: 520px) {
-    .photo-modal-content__2G4jm {
-        width: 100%;
-    }
+  .photo-info-content__2G4jm {
+    width: 100%;
+  }
 
-    .season-title__3UNQM,
-    .season-container__3Cs7Z {
-        width: 98%;
-    }
+  .season-title__3UNQM,
+  .season-container__3Cs7Z {
+    width: 98%;
+  }
 }
 
 .hidden__lmBkV {
-    display: none;
+  display: none;
 }
 
 .colour-display__1wt4G {
-    text-align: center;
+  text-align: center;
 }
 
 * {
@@ -1811,7 +1814,7 @@ html {
 }
 
 body {
-  font-family: 'PT Mono', monospace;
+  font-family: "PT Mono", monospace;
   font-size: 1.6rem;
 }
 
@@ -1834,9 +1837,9 @@ button:hover {
   grid-template-rows: repeat(3, -webkit-min-content);
   grid-template-rows: repeat(3, min-content);
   grid-template-areas:
-    'header header'
-    'garden info'
-    'footer footer';
+    "header header"
+    "garden info"
+    "footer footer";
 }
 
 /* Header */
@@ -1848,8 +1851,8 @@ button:hover {
   grid-template-rows: repeat(2, -webkit-min-content);
   grid-template-rows: repeat(2, min-content);
   grid-template-areas:
-    'header-left header-right'
-    'header-centre header-centre';
+    "header-left header-right"
+    "header-centre header-centre";
 }
 
 .header-centre__1Vx_t {
@@ -1875,7 +1878,7 @@ button:hover {
 .button__2cB2u {
   color: #131313;
   font-size: 2.4rem;
-  font-family: 'Bangers';
+  font-family: "Bangers";
 }
 
 .button--big__3dKWW {
@@ -1904,9 +1907,9 @@ button:hover {
   grid-template-rows: repeat(3, -webkit-min-content);
   grid-template-rows: repeat(3, min-content);
   grid-template-areas:
-    '. col-name'
-    'row-name-borders borders-grid'
-    'row-name-decking decking-grid';
+    ". col-name"
+    "row-name-borders borders-grid"
+    "row-name-decking decking-grid";
 }
 
 .borders-grid__1bdm7 {
@@ -1915,22 +1918,22 @@ button:hover {
   grid-template-columns: repeat(16, 3.5rem);
   grid-template-rows: repeat(16, 3.5rem);
   grid-template-areas:
-    'A1 B1 C1 D1 E1 F1 G1 H1 J1 K1 L1 M1 N1 P1 Q1 R1'
-    'A2 B2 C2 D2 E2 F2 G2 H2 J2 K2 L2 M2 N2 P2 Q2 R2'
-    'A3 B3 C3 D3 E3 F3 G3 H3 J3 K3 L3 M3 N3 P3 Q3 R3'
-    'A4 B4 C4 grass grass grass grass grass grass grass grass grass grass P4 Q4 R4'
-    'A5 B5 C5 grass grass grass grass grass grass grass grass grass grass P5 Q5 R5'
-    'A6 B6 C6 grass grass grass grass grass grass grass grass grass grass P6 Q6 R6'
-    'A7 B7 C7 grass grass grass grass grass grass grass grass grass grass P7 Q7 R7'
-    'A8 B8 C8 grass grass grass grass grass grass grass grass grass grass P8 Q8 R8'
-    'A9 B9 C9 grass grass grass grass grass grass grass grass grass grass P9 Q9 R9'
-    'A10 B10 C10 grass grass grass grass grass grass grass grass grass grass P10 Q10 R10'
-    'A11 B11 C11 grass grass grass grass grass grass grass grass grass grass P11 Q11 R11'
-    'A12 B12 C12 grass grass grass grass grass grass grass grass grass grass P12 Q12 R12'
-    'A13 B13 C13 grass grass grass grass grass grass grass grass grass grass P13 Q13 R13'
-    'A14 B14 C14 grass grass grass grass grass grass grass grass grass grass P14 Q14 R14'
-    'A15 B15 C15 grass grass grass grass grass grass grass grass grass grass P15 Q15 R15'
-    'A16 B16 C16 grass grass grass grass grass grass grass grass grass grass P16 Q16 R16';
+    "A1 B1 C1 D1 E1 F1 G1 H1 J1 K1 L1 M1 N1 P1 Q1 R1"
+    "A2 B2 C2 D2 E2 F2 G2 H2 J2 K2 L2 M2 N2 P2 Q2 R2"
+    "A3 B3 C3 D3 E3 F3 G3 H3 J3 K3 L3 M3 N3 P3 Q3 R3"
+    "A4 B4 C4 grass grass grass grass grass grass grass grass grass grass P4 Q4 R4"
+    "A5 B5 C5 grass grass grass grass grass grass grass grass grass grass P5 Q5 R5"
+    "A6 B6 C6 grass grass grass grass grass grass grass grass grass grass P6 Q6 R6"
+    "A7 B7 C7 grass grass grass grass grass grass grass grass grass grass P7 Q7 R7"
+    "A8 B8 C8 grass grass grass grass grass grass grass grass grass grass P8 Q8 R8"
+    "A9 B9 C9 grass grass grass grass grass grass grass grass grass grass P9 Q9 R9"
+    "A10 B10 C10 grass grass grass grass grass grass grass grass grass grass P10 Q10 R10"
+    "A11 B11 C11 grass grass grass grass grass grass grass grass grass grass P11 Q11 R11"
+    "A12 B12 C12 grass grass grass grass grass grass grass grass grass grass P12 Q12 R12"
+    "A13 B13 C13 grass grass grass grass grass grass grass grass grass grass P13 Q13 R13"
+    "A14 B14 C14 grass grass grass grass grass grass grass grass grass grass P14 Q14 R14"
+    "A15 B15 C15 grass grass grass grass grass grass grass grass grass grass P15 Q15 R15"
+    "A16 B16 C16 grass grass grass grass grass grass grass grass grass grass P16 Q16 R16";
 }
 
 .decking-grid__1CvQJ {
@@ -1940,9 +1943,9 @@ button:hover {
   grid-template-columns: repeat(16, 3.5rem);
   grid-template-rows: repeat(3, 3.5rem);
   grid-template-areas:
-    'A17 B17 C17 D17 E17 F17 G17 H17 J17 K17 L17 M17 N17 P17 Q17 R17'
-    'A18 B18 C18 D18 E18 F18 G18 H18 J18 K18 L18 M18 N18 P18 Q18 R18'
-    'A19 B19 C19 D19 E19 F19 G19 H19 J19 K19 L19 M19 N19 P19 Q19 R19';
+    "A17 B17 C17 D17 E17 F17 G17 H17 J17 K17 L17 M17 N17 P17 Q17 R17"
+    "A18 B18 C18 D18 E18 F18 G18 H18 J18 K18 L18 M18 N18 P18 Q18 R18"
+    "A19 B19 C19 D19 E19 F19 G19 H19 J19 K19 L19 M19 N19 P19 Q19 R19";
 }
 
 .col-name__2p9KU {
@@ -2049,41 +2052,41 @@ td {
   border: 0.05rem dotted #131313;
 }
 
-/* Info modal */
-.modal__1nSBQ {
+/* Info info */
+.info__1nSBQ {
   grid-area: info;
   justify-self: center;
   width: 60%;
   margin: 3.6rem 3rem;
 }
 
-.modal-content__36w-W {
+.info-content__36w-W {
   padding: 2.4rem;
   border: 2rem solid ghostwhite;
   text-align: center;
 }
 
-.modal-image__UiAdj img {
+.info-image__UiAdj img {
   max-width: 80%;
   margin-top: 1.8rem;
 }
 
-.modal-title__14M0h {
-  font-family: 'Bangers';
+.info-title__14M0h {
+  font-family: "Bangers";
   margin: 2rem 1.2rem;
   font-size: 4.4rem;
 }
 
-.modal-common-name__1gCCn {
+.info-common-name__1gCCn {
   font-size: 2.8rem;
 }
 
-.modal-perennial-annual__30VsP {
+.info-perennial-annual__30VsP {
   font-size: 2.4rem;
   margin: 1.2rem auto;
 }
 
-.modal-link__2ayki {
+.info-link__2ayki {
   margin: 2rem auto 2.4rem;
 }
 
@@ -2122,13 +2125,13 @@ td {
     grid-template-rows: repeat(4, min-content);
     grid-template-columns: none;
     grid-template-areas:
-      'header'
-      'garden'
-      'info'
-      'footer';
+      "header"
+      "garden"
+      "info"
+      "footer";
   }
 
-  .modal__1nSBQ {
+  .info__1nSBQ {
     margin: 5.7rem auto;
   }
 
@@ -2138,7 +2141,7 @@ td {
 }
 
 /* GALLERY */
-.photo-modal__2wIy0 {
+.photo-info__2wIy0 {
   display: block;
   position: fixed;
   z-index: 100;
@@ -2152,7 +2155,7 @@ td {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-.photo-modal-content__1wPOO {
+.photo-info-content__1wPOO {
   margin: auto;
   display: block;
   width: 80%;
@@ -2216,14 +2219,14 @@ td {
 .season-title__2EQQI {
   width: 50%;
   margin: 1.2rem auto 0.4rem;
-  font-family: 'Bangers';
+  font-family: "Bangers";
   font-size: 4rem;
   text-align: left;
   color: #131313;
 }
 
 @media (max-width: 520px), screen and (max-device-width: 520px) {
-  .photo-modal-content__1wPOO {
+  .photo-info-content__1wPOO {
     width: 100%;
   }
 
@@ -2240,6 +2243,5 @@ td {
 .colour-display__iwz2z {
   text-align: center;
 }
-
 
 /*# sourceMappingURL=ssr-bundle.0d48c.css.map*/

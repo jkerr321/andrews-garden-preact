@@ -1,17 +1,6 @@
 import React from "react";
-import InfoBox from "./info-box";
 
 class GridPlant extends React.Component {
-  state = { showModal: false }; //?? should I use constructor?
-
-  showModal = () => {
-    const existingModal = document.getElementById("modal");
-    if (existingModal) {
-      existingModal.remove();
-    }
-    this.setState({ showModal: true });
-  };
-
   render() {
     const { gridPosition, perennialAnnual, colour } = this.props; //?? should I put props in state?
 
@@ -21,17 +10,12 @@ class GridPlant extends React.Component {
     };
 
     return (
-      <React.Fragment>
-        <button
-          className={"grid-plant" + " " + perennialAnnual}
-          style={buttonStyle}
-          key={gridPosition}
-          onClick={this.showModal}
-        ></button>
-        {this.state.showModal && (
-          <InfoBox key={"modal" + gridPosition} {...this.props} />
-        )}
-      </React.Fragment>
+      <button
+        className={"grid-plant" + " " + perennialAnnual}
+        style={buttonStyle}
+        key={gridPosition}
+        onClick={() => this.props.controlInfoBox(gridPosition)}
+      ></button>
     );
   }
 }
